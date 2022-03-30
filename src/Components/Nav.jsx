@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
+import Cart from './Cart'
 
-function Nav() {
+function Nav(props) {
   const [menu, setMenu] = useState(false)
   const [cart, setCart] = useState(false)
 
@@ -68,7 +69,14 @@ function Nav() {
             <img src='/images/logo.svg' />
           </a>
         </li>
-        <li className='ml-auto mr-5'>
+        <li className='relative ml-auto mr-5'>
+          {props.counter > 0 ? (
+            <p className='absolute bottom-3 left-2 rounded-lg bg-primary-orange px-2 text-xs text-neutral-white'>
+              {props.counter}
+            </p>
+          ) : (
+            ''
+          )}
           <a className='cursor-pointer' onClick={openCart}>
             <img src='/images/icon-cart.svg' />
           </a>
@@ -82,6 +90,7 @@ function Nav() {
           </a>
         </li>
       </ul>
+      {cart ? <Cart counter={props.counter} /> : ''}
 
       {/* Desktop Nav */}
       <ul className='h-30 top-0 z-20 hidden w-full  bg-white py-7 shadow-md md:fixed md:flex md:items-center md:px-10 md:text-sm lg:px-20 lg:text-base'>
@@ -108,7 +117,14 @@ function Nav() {
           </li>
         </div>
 
-        <li className='ml-auto md:mr-3 lg:mr-10'>
+        <li className='relative ml-auto md:mr-3 lg:mr-10'>
+          {props.counter > 0 ? (
+            <p className='absolute bottom-3 left-2 rounded-lg bg-primary-orange px-2 text-xs text-neutral-white'>
+              {props.counter}
+            </p>
+          ) : (
+            ''
+          )}
           <a className='cursor-pointer' onClick={openCart}>
             <img src='/images/icon-cart.svg' />
           </a>

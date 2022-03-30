@@ -1,34 +1,15 @@
-import { useState } from 'react'
+import React from 'react'
 import ProductImage from './ProductImage'
 import CartLogo from './CartLogo'
 
-function Product() {
-  const [counter, setCounter] = useState(0)
-  const [addToCart, setAddToCart] = useState(0)
-
-  function handlePlus() {
-    setCounter((prevCounter) => {
-      return prevCounter + 1
-    })
-  }
-
-  function handleMinus() {
-    setCounter((prevCounter) => {
-      return prevCounter >= 1 ? prevCounter - 1 : prevCounter
-    })
-  }
-
-  function handleCart(e) {
-    setAddToCart(counter)
-  }
-
+function Product(props) {
   return (
     <>
       <div className='block md:hidden'>
         <ProductImage />
       </div>
-      <div className='mt-8 mb-5 items-center gap-20  px-10 md:px-12 md:pt-20 lg:mb-0 lg:flex lg:px-20 desktop:px-52'>
-        <div className=' hidden md:block lg:max-w-[440px]'>
+      <div className='mt-5 mb-5 items-center px-10 md:flex  md:flex-col md:justify-center md:gap-2 md:px-12 md:pt-20 lg:mb-0 lg:flex lg:flex-row lg:gap-20 lg:px-20 desktop:px-52'>
+        <div className='hidden md:block md:max-w-[440px]'>
           <ProductImage />
         </div>
         <div className='desktop:w-[600px]'>
@@ -61,21 +42,24 @@ function Product() {
 
           <div className='pb-10 md:flex'>
             <div className='mt-5 mr-10 flex w-full items-center justify-center rounded-md bg-neutral-light_grayish-blue p-4 md:mr-auto md:w-[40%]'>
-              <button className='mr-auto cursor-pointer' onClick={handleMinus}>
+              <button
+                className='mr-auto cursor-pointer'
+                onClick={props.handleMinus}
+              >
                 <img src='/images/icon-minus.svg' />
               </button>
-              <p className='mr-auto text-lg font-bold'>{counter}</p>
-              <button className='cursor-pointer' onClick={handlePlus}>
+              <p className='mr-auto text-lg font-bold'>{props.counter}</p>
+              <button className='cursor-pointer' onClick={props.handlePlus}>
                 <img src='/images/icon-plus.svg' />
               </button>
             </div>
 
             <div
-              onClick={handleCart}
-              className='mt-6 flex cursor-pointer justify-center gap-3 rounded-lg bg-primary-orange p-4 font-semibold shadow-lg shadow-primary-orange md:w-[50%]'
+              onClick={props.handleCart}
+              className='mt-6 flex cursor-pointer justify-center gap-3 rounded-lg bg-primary-orange p-4 font-semibold shadow-lg shadow-primary-orange active:bg-primary-orange/80 active:shadow-primary-orange/80 md:w-[50%]'
             >
               <CartLogo fill='white' />
-              <p className='text-neutral-white'>Add to cart</p>
+              <p className='text-neutral-white '>Add to cart</p>
             </div>
           </div>
         </div>
