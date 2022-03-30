@@ -20,6 +20,7 @@ function Cart(props) {
           <div className='px-5 pb-5'>
             <div className='flex items-center justify-around gap-5 py-7 '>
               <img
+                alt='Product Image'
                 className='w-14 rounded-lg'
                 src='/images/image-product-1-thumbnail.jpg'
               />
@@ -34,7 +35,7 @@ function Cart(props) {
                   </span>
                 </p>
               </div>
-              <img src='/images/icon-delete.svg' />
+              <img alt='Delete Icon' src='/images/icon-delete.svg' />
             </div>
             <div className='flex cursor-pointer justify-center rounded-lg bg-primary-orange p-4 font-semibold shadow-primary-orange'>
               <button className='font-bold text-neutral-white'>Checkout</button>

@@ -42,16 +42,16 @@ function Product(props) {
 
           <div className='pb-10 md:flex'>
             <div className='mt-5 mr-10 flex w-full items-center justify-center rounded-md bg-neutral-light_grayish-blue p-4 md:mr-auto md:w-[40%]'>
-              <button
+              <div
                 className='mr-auto cursor-pointer'
                 onClick={props.handleMinus}
               >
-                <img src='/images/icon-minus.svg' />
-              </button>
+                <img src='/images/icon-minus.svg' alt='Minus Icon' />
+              </div>
               <p className='mr-auto text-lg font-bold'>{props.counter}</p>
-              <button className='cursor-pointer' onClick={props.handlePlus}>
-                <img src='/images/icon-plus.svg' />
-              </button>
+              <div className='cursor-pointer' onClick={props.handlePlus}>
+                <img src='/images/icon-plus.svg' alt='Plus Icon' />
+              </div>
             </div>
 
             <div
