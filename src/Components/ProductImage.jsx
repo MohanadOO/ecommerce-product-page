@@ -11,7 +11,10 @@ function ProductImage() {
         className='mb-5 md:rounded-lg'
         src={`/images/image-product-${image}.jpg`}
       />
-      <div aria-label='Product Thumbnails' className='mb-10 hidden items-center justify-between gap-3 overflow-auto md:flex'>
+      <div
+        aria-label='Product Thumbnails'
+        className='mb-10 hidden items-center justify-between gap-3 overflow-auto md:flex'
+      >
         <img
           alt='Product Thumbnail'
           onClick={() => setImage(1)}
@@ -43,7 +46,7 @@ function ProductImage() {
             prevImage <= 4 && prevImage > 1 ? prevImage - 1 : prevImage
           )
         }
-        className='absolute top-[50%] left-3 z-10 h-12 w-12 rounded-full  bg-neutral-light_grayish-blue md:hidden'
+        className='absolute top-[50%] left-3 z-10 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-neutral-light_grayish-blue md:hidden'
       >
         <img
           alt='Previous Icon'
@@ -57,7 +60,7 @@ function ProductImage() {
             prevImage >= 1 && prevImage < 4 ? prevImage + 1 : prevImage
           )
         }
-        className='absolute top-[50%] right-3 z-10 h-12 w-12 rounded-full  bg-neutral-light_grayish-blue md:hidden'
+        className='absolute top-[50%] right-3 z-10 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full  bg-neutral-light_grayish-blue md:hidden'
       >
         <img alt='Next Icon' src='/images/icon-next.svg' className='mx-auto' />
       </div>
