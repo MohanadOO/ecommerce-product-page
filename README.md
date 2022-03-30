@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Here](https://www.frontendmentor.io/solutions/ecommerce-producet-page-using-react-and-tailwindcss-rkmB5JM79)
+- Live Site URL: [Here](https://ecommerce-product-page-mohanadoo.vercel.app/)
 
 ## My process
 
